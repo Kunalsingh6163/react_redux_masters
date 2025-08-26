@@ -34,3 +34,19 @@ const changeTheNumber = (state = initialState, action) =>{
         default : return state;
     }
 }
+
+Q.5 => what is Store?
+Answer => The Redux store brings together the state, actions, and reducers that make up your app.
+          it's important to note that we will only have a single store in a rudux application.
+          Every Redux store has a single root reducer function.
+
+///////// Redux Store /////////////////
+import {createStore} from redux;
+const store = createStore(rootReducers);
+
+Q.6 => REDUX Principles.
+Answer => 1. Single source of truth => the global state of your application is stored as an object 
+             inside a single store.
+          2. State is Read Only => The only way to change the state is to dispatch an action.
+          3. Immutability, One-way data flow, Predictability of outcome.
+          4. Changes are made with Pure Reducer Function.
