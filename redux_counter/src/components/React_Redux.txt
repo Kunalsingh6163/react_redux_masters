@@ -1,0 +1,36 @@
+Q.1=> What is Redux?
+Answer => Redux is a pattern and library for managing and updating application state, using events called "action". it
+          serves as a centralized store for state that needs to be used across your entire application, with rules 
+          ensuring that the state can only be updated in a predictable fashion.
+
+Q.2=> Redux Main Topics.
+Answer => 1. Action => What to do?
+          2. Reducer => How to do.
+          3. Store => object which holds the state of the application.
+          4. Functions associated with store => createStore(), dispatch(), getState().
+
+Q.3=> What are Action? (Pure Object).
+Answer => Actions are plain JS objects that have a type field. Actions only tell what to do, but they
+          don't tell how to do.
+            (in the counter application we have two actions. 1.INCREMENT, 2.DECREMENT)
+
+/////////// Action Example /////////////
+export const incNumber = (num) => {
+    return{
+        type: "INCREMENT"
+        payload: num
+    }
+}
+
+Q.4 => What are Reducer?
+Answer => Reducers are functions that take the current state and an action as arguments, and return a new state result.
+
+////////// Reducer Example /////////////
+const initialState = 0;
+const changeTheNumber = (state = initialState, action) =>{
+    switch (action.type){
+        case "INCREMENT" : return state + action.payload;
+        case "DECREMENT" : return state - 1;
+        default : return state;
+    }
+}
